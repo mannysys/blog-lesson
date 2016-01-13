@@ -3,14 +3,17 @@
 var http = require('http');
 var url = require('url');
 var actionRepos = {};
+var session = require('./session');
 
 actionRepos['/add'] = require('./actions/add');
 actionRepos['/del'] = require('./actions/del');
-/*handleRepos['/update'] = require('./actions/update');*/
+actionRepos['/update'] = require('./actions/update');
 actionRepos['/'] = require('./actions/index');
 
 
 http.createServer(function(request,response){
+    request.session = session(request,response);
+
     response.writeHead('Content-Type','text/html');
 
     let pathname = url.parse(request.url).pathname;

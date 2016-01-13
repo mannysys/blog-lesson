@@ -15,12 +15,15 @@ try{
 module.exports = {
     add(article){
         list.push(article);
+        this.store();
     },
     del(index){
         list.splice(index, 1);
+        this.store();
     },
     update(index,newArticle){
         list.splice(index,1,newArticle);
+        this.store();
     },
     get list(){
         return list;
@@ -32,7 +35,13 @@ module.exports = {
      * JSON.stringify对数据本身做字符串化
      */
     store(callback){
+        callback = callback || function(){};
         fs.writeFile(filepath,JSON.stringify(list),callback);
     }
 
+
+
 };
+
+
+

@@ -15,7 +15,7 @@ class IndexPager extends AbstractPager{
         let listDOMString = this.list.map( (article,index) => ` <li class="list-group-item"><h3>${article.title}</h3><p>${article.body}</p>
             <div>
                 <a href="/del?id=${index}"> DEL </a>
-
+                <a href="/update?id=${index}"> UPDATE </a>
             </div>
 
         </li>`).join('');
