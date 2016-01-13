@@ -20,6 +20,13 @@ class AbstractPager{
         <link rel='stylesheet' href='//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css'/>
         </head>
         <body class='container'>
+
+            <div>
+                <a href="/login" class="btn btn-success">登录</a>
+                <a href="/logout" class="btn btn-default">退出</a>
+                <a href="/add" class="btn btn-success">添加</a>
+            </div>
+
             ${this._render()}
         </body>
         </html>

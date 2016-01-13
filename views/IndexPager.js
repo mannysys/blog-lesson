@@ -21,6 +21,7 @@ class IndexPager extends AbstractPager{
         </li>`).join('');
 
         return `
+
             <ul class="list-group">
                 ${listDOMString}
             </ul>
