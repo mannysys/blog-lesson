@@ -10,6 +10,7 @@ class LoginPager extends AbstractPager{
     }
 
     _render(){
+        let time = Date.now();
 
         let titleError = this.errors.title || '';
         let bodyError = this.errors.body || '';
@@ -24,6 +25,10 @@ class LoginPager extends AbstractPager{
           <div class="form-group">
             <label for="password">登录密码</label>
             <input type="text" class="form-control" name="password" placeholder="登录密码">
+          </div>
+           <div class="form-group">
+            <label for="vnum">验证码<img src="/vnum?${time}" /></label>
+            <input type="text" class="form-control" name="vnum" id="vnum" placeholder="登录密码">
           </div>
 
           <button type="submit" class="btn btn-default">登录</button>

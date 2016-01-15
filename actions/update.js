@@ -9,7 +9,6 @@ var loginAction = require('./login');
 
 //更新文章
 module.exports = function(req, res){
-    console.log(req.session.isLogined);
     //如果删除的话，检测是否登录
     if(!req.session.isLogined){
         loginAction(req,res);

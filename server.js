@@ -10,9 +10,10 @@ actionRepos['/update'] = require('./actions/update');
 actionRepos['/'] = require('./actions/index');
 actionRepos['/login'] = require('./actions/login');
 actionRepos['/logout'] = require('./actions/logout');
+actionRepos['/vnum'] = require('./actions/vnum');
+
 
 http.createServer(function(request,response){
-    console.log(request.session);
     request.session = session(request,response);
     response.writeHead('Content-Type','text/html');
     let pathname = url.parse(request.url).pathname;
