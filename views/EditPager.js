@@ -1,8 +1,8 @@
-'use strict'; //ʹ��ES6Ҫ����ͷ����Ϣ
+'use strict'; //使用ES6要加入头部信息
 var AbstractPager = require('./AbstractPager');
 
 
-//��������̳г����࣬ʵ�ֳ�����ķ���
+//定义子类继承抽象类，实现抽象类的方法
 class EditPager extends AbstractPager{
 
     constructor(id,article,errors,isLogined){

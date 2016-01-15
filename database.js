@@ -1,13 +1,13 @@
 
 var fs = require('fs');
 
-//¶¨Òå³£Á¿ÎÄ¼şÂ·¾¶
+//å®šä¹‰å¸¸é‡æ–‡ä»¶è·¯å¾„
 const filepath = __dirname+'/data.json';
 
 var list;
-//Èç¹ûÅ×³öÒì³£µÄ»°³õÊ¼»¯Êı×é
+//å¦‚æœæŠ›å‡ºå¼‚å¸¸çš„è¯åˆå§‹åŒ–æ•°ç»„
 try{
-    list = JSON.parse(fs.readFileSync(filepath)); //¶ÁÈ¡½âÎöjsonÎÄ¼şÊı¾İ
+    list = JSON.parse(fs.readFileSync(filepath));  //è¯»å–è§£æjsonæ–‡ä»¶æ•°æ®
 }catch(e){
     list = [];
 }
@@ -29,10 +29,10 @@ module.exports = {
         return list;
     },
     /*
-     * ³Ö¾Ã»¯ÊÇ½«ÄÚ´æÖĞÊı¾İ´¢´æÔÚÓ²ÅÌÉÏ
-     * fs.writeFileµÚÒ»²ÎÊıÊÇÎÄ¼şÎ»ÖÃ£¬µÚ¶şÊÇÊı¾İ±¾Éí£¬µÚÈıÊÇ»Øµ÷º¯Êı
-     * __dirname±íÊ¾µ±Ç°Õâ¸ö³ÌĞòÄ¿Â¼
-     * JSON.stringify¶ÔÊı¾İ±¾Éí×ö×Ö·û´®»¯
+     * æŒä¹…åŒ–æ˜¯å°†å†…å­˜ä¸­æ•°æ®å‚¨å­˜åœ¨ç¡¬ç›˜ä¸Š
+     * fs.writeFileç¬¬ä¸€å‚æ•°æ˜¯æ–‡ä»¶ä½ç½®ï¼Œç¬¬äºŒæ˜¯æ•°æ®æœ¬èº«ï¼Œç¬¬ä¸‰æ˜¯å›è°ƒå‡½æ•°
+     * __dirnameè¡¨ç¤ºå½“å‰è¿™ä¸ªç¨‹åºç›®å½•
+     * JSON.stringifyå¯¹æ•°æ®æœ¬èº«åšå­—ç¬¦ä¸²åŒ–
      */
     store(callback){
         callback = callback || function(){};
