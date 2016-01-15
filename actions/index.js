@@ -2,10 +2,10 @@
 var IndexPager = require('../views/IndexPager');
 var database = require('../database');
 
-//Ê×Ò³
+//é¦–é¡µ
 module.exports = function(req,res){
 
-    res.end(new IndexPager(database.list).render());
+    res.end(new IndexPager(database.list,req.session.isLogined).render());
 
 
 }

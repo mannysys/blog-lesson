@@ -6,7 +6,7 @@ var indexAction = require('./index');
 module.exports = function(req,res){
 
     if(req.method === 'GET'){
-        //äÖÈ¾µÇÂ¼ÊÓÍ¼Ò³
+        //æ¸²æŸ“ç™»å½•è§†å›¾é¡µ
         res.end(new LoginPager().render());
     }else{
         post(req).then(data=>{
@@ -14,10 +14,10 @@ module.exports = function(req,res){
             var password = data.password;
 
             if(loginname && password && loginname === 'leo' && password === '123456'){
-                req.session.isLogin = true;
+                req.session.isLogined = true;
                 indexAction(req, res);
             }else{
-                res.end(new LoginPager("µÇÂ¼Ê§°Ü£¬ÇëÖØĞÂµÇÂ¼").render());
+                res.end(new LoginPager("ç™»å½•å¤±è´¥ï¼Œè¯·é‡æ–°ç™»å½•").render());
             }
 
 

@@ -5,15 +5,22 @@ var database = require('../database');
 var query = require('./query');
 var post = require('./post');
 var indexAction = require('./index');
+var loginAction = require('./login');
 
-//¸üĞÂÎÄÕÂ
+//æ›´æ–°æ–‡ç« 
 module.exports = function(req, res){
+    //å¦‚æœåˆ é™¤çš„è¯ï¼Œæ£€æµ‹æ˜¯å¦ç™»å½•
+    if(!req.session.isLogined){
+        loginAction(req,res);
+        return;
+    }
+
     // get - open update page
     if(req.method === 'GET'){
         var id = query(req).id;
         var article = database.list[id];
         var errors = {};
-        res.end(new EditPager(id,article,errors).render());
+        res.end(new EditPager(id,article,errors,req.session.isLogined).render());
 
     }else{
     // post - update with database
@@ -21,7 +28,7 @@ module.exports = function(req, res){
             let id = data.id;
             delete data.id;
             database.update(id,data);
-            indexAction(req,res); //·µ»ØÊ×Ò³
+            indexAction(req,res); //è¿”å›é¦–é¡µ
         });
 
 

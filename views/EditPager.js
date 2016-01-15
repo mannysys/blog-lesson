@@ -5,8 +5,8 @@ var AbstractPager = require('./AbstractPager');
 //��������̳г����࣬ʵ�ֳ�����ķ���
 class EditPager extends AbstractPager{
 
-    constructor(id,article,errors){
-        super();
+    constructor(id,article,errors,isLogined){
+        super(isLogined);
         this.id = id;
         this.article = article;
         this.errors = errors;

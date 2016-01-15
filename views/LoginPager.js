@@ -4,8 +4,8 @@ var AbstractPager = require('./AbstractPager');
 //定义子类继承抽象类，实现抽象类的方法
 class LoginPager extends AbstractPager{
 
-    constructor(errors){
-        super();
+    constructor(errors,isLogined){
+        super(isLogined);
         this.errors = errors || '';
     }
 
