@@ -1,7 +1,7 @@
 'use strict';
 var database = require('../database');
 var AddPager = require('../views/AddPager');
-var post = require('./post');
+var post = require('../utils/post');
 var IndexPager = require('../views/IndexPager');
 var loginAction = require('./login');
 
@@ -21,12 +21,19 @@ module.exports = function(req,res){
         post(req).then(function(data){
 
             var errors = {};
+            //验证添加的标题
             if(!(data.title && data.title.length >= 5)){
                 errors.title = 'title char length >= 5';
             }
+            //验证添加的内容
             if(!(data.body && data.body.length >= 10)){
                 errors.body = 'body char length >= 10';
             }
+            //验证输入的验证码
+            if(!(data.vnum === req.session.vnum)){
+                errors.vnum = '验证码错误';
+            }
+
 
             if(Object.keys(errors).length){
                 res.writeHead('Content-Type','text/html');

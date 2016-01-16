@@ -10,10 +10,11 @@ class AddPager extends AbstractPager{
     }
 
     _render(){
+        let time = Date.now();
 
         let titleError = this.errors.title || '';
         let bodyError = this.errors.body || '';
-
+        let vnumError = this.errors.vnum || '';
         return `
         <form action="/add" method="post">
           <div class="form-group">
@@ -25,6 +26,11 @@ class AddPager extends AbstractPager{
             <label for="body">内容</label>
             <textarea class="form-control" name="body" id="body" placeholder="内容"></textarea>
             <p>${bodyError}</p>
+          </div>
+          <div class="form-group">
+            <label for="vnum">验证码<img src="/vnum?${time}" /></label>
+            <input type="text" class="form-control" name="vnum" id="vnum" placeholder="验证码">
+            <p>${vnumError}</p>
           </div>
 
           <button type="submit" class="btn btn-default">添加</button>

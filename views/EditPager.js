@@ -16,6 +16,7 @@ class EditPager extends AbstractPager{
 
         let titleError = this.errors.title || '';
         let bodyError = this.errors.body || '';
+        let vnumError = this.errors.vnum || '';
 
         return `
         <form action="/update" method="post">

@@ -1,6 +1,6 @@
 'use strict';
 var database = require('../database');
-var getId = require('./getId');
+var getId = require('../utils/getId');
 var indexAction = require('./index');
 var loginAction = require('./login');
 

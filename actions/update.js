@@ -2,8 +2,8 @@
 
 var EditPager = require('../views/EditPager');
 var database = require('../database');
-var query = require('./query');
-var post = require('./post');
+var query = require('../utils/query');
+var post = require('../utils/post');
 var indexAction = require('./index');
 var loginAction = require('./login');
 

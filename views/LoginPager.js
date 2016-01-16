@@ -28,7 +28,7 @@ class LoginPager extends AbstractPager{
           </div>
            <div class="form-group">
             <label for="vnum">验证码<img src="/vnum?${time}" /></label>
-            <input type="text" class="form-control" name="vnum" id="vnum" placeholder="登录密码">
+            <input type="text" class="form-control" name="vnum" id="vnum" placeholder="验证码">
           </div>
 
           <button type="submit" class="btn btn-default">登录</button>
